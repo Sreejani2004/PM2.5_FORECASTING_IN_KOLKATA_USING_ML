@@ -61,7 +61,7 @@ for(split in splits) {
       cat("\nSplit:", split * 100, "% | mtry:", mtry_val, "| nodesize:", nodesize_val, "\n")
       cat("Feature Importance\n")
       print(imp_df)
-      top_features <- imp_df$Feature[1:min(3, nrow(imp_df))]
+      top_features <- imp_df$Feature[1:3]
       formula_rf <- as.formula(paste("PM2.5 ~", paste(top_features, collapse = " + ")))
       rf_top <- randomForest(
         formula_rf,
